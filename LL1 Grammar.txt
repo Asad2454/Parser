@@ -1,0 +1,19 @@
+#@Function    	->	Type identifier ( ArgList ) CompoundStmt
+#@ArgList     	->   	Arg ArgList' 
+#@ArgList'    	->  	, Arg ArgList'|E
+#@Arg         	->     	Type identifier
+#@Stmt        	->    	WhileStmt   | Expr ; | CompoundStmt | Declaration | ;
+#@Declaration 	->    	Type IdentList ;
+#@Type        	->      int | float
+#@WhileStmt    	->      while ( BoolExpr ) Stmt
+#@CompoundStmt 	-> 	{ StmtList }
+#@StmtList	->	Stmt StmtList'
+#@StmtList'	->	Stmt StmtList'|E
+#@BoolExpr    	->    	identifier Compare Mag
+#@Compare 	->      == | < | > | <= | >= | != | <>
+#Expr	        ->   	identifier := Mag
+#Mag         	->     	Term Mag'
+#Mag'        	->    	+ Term Mag' | - Term Mag' | E
+#Term 		->    	Factor Term'
+#Term'       	->    	* Factor Term' | / Factor Term' | E
+#Factor      	->      ( Expr ) | identifier | number     
